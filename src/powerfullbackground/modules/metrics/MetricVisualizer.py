@@ -47,13 +47,13 @@ def gen_network_bar(img, x, y, network_sent, network_recv):
                     (arrow_x + arrow_width / 2, arrow_y - arrow_height)]
     draw_triangle(img, arrow_coords, None, 1, arrow_fill)
     arrow_y -= 35
-    write_text(img, f'{network_sent} Mbps', (arrow_x + arrow_width + 20, arrow_y), font, (255, 255, 255))
+    write_text(img, f'{network_recv} Mbps', (arrow_x + arrow_width + 20, arrow_y), font, (255, 255, 255))
     arrow_x += 270
     arrow_fill = (255, 0, 255)
     arrow_coords = [(arrow_x, arrow_y), (arrow_x + arrow_width, arrow_y),
                     (arrow_x + arrow_width / 2, arrow_y + arrow_height)]
     draw_triangle(img, arrow_coords, None, 1, arrow_fill)
-    write_text(img, f'{network_recv} Mbps', (arrow_x + arrow_width + 20, arrow_y), font, (255, 255, 255))
+    write_text(img, f'{network_sent} Mbps', (arrow_x + arrow_width + 20, arrow_y), font, (255, 255, 255))
 
 
 def gen_disk_io_bar(img, x, y, read_bytes, write_bytes):

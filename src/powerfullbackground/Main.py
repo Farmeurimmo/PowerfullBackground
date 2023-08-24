@@ -3,7 +3,7 @@ from modules.metrics.MetricVisualizer import *
 from modules.metrics.SystemMetrics import *
 from modules.wallpaper.WallpaperManager import *
 
-interval = 0.4  # seconds
+interval = 0.5  # seconds
 
 project_path = os.getcwd() + '/src/powerfullbackground/'
 
