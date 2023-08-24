@@ -23,6 +23,8 @@ Oui et non, avec un i5 dernière génération, cela consomme entre 1 et 3% de cp
 - pip3
 - un terminal avec accès root
 
+**ATTENTION, Xfce est le seul environnement supporté pour l'instant**
+
 ```bash
 git clone https://github.com/Farmeurimmo/PowerfullBackground.git
 ```
