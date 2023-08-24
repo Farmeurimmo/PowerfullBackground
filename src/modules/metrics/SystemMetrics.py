@@ -16,7 +16,7 @@ def get_cpu():
     cpu_usage_percent = psutil.cpu_percent(interval=0)
 
     cpu_info = cpuinfo.get_cpu_info()
-    cpu_frequency = cpu_info['hz_actual_friendly'].replace(' GHz', '')
+    cpu_frequency = cpu_info['hz_actual_friendly'].replace(' GHz', '').replace(' MHz', '')
     cpu_frequency = round(float(cpu_frequency), 2)
 
     return cpu_usage_percent, cpu_frequency
