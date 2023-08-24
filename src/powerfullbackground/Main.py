@@ -1,20 +1,13 @@
-import subprocess
-
-from src.modules.metrics.MetricVisualizer import *
-from src.modules.metrics.SystemMetrics import *
+from src.powerfullbackground.modules.metrics.MetricVisualizer import *
+from src.powerfullbackground.modules.metrics.SystemMetrics import *
 from utils.FileUtils import *
+from modules.wallpaper.WallpaperManager import *
 
 interval = 0.4  # seconds
 
-project_path = os.getcwd() + '/src/'
+project_path = os.getcwd() + '/src/powerfullbackground/'
 
 file_name = project_path + 'ressources/final.jpeg'
-
-
-def set_wallpaper():
-    image_path = project_path + 'ressources/final.jpeg'
-    cmd = f'xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitoreDP-1/workspace0/last-image -s "{image_path}"'
-    subprocess.run(cmd, shell=True)
 
 
 while True:
@@ -33,8 +26,9 @@ while True:
 
     img.save(file_name, format='JPEG')
 
-    set_wallpaper()
+    set_xfce_wallpaper()
 
     took = time.time() - start_time
+    print('took: ' + str(took) + 's')
     if interval - took > 0:
         time.sleep(interval - took)

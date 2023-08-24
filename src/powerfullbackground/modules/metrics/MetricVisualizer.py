@@ -2,9 +2,9 @@ import os
 
 from PIL import ImageFont
 
-from src.utils.ShapeDrawerUtils import *
+from src.powerfullbackground.utils.ShapeDrawerUtils import *
 
-font = ImageFont.truetype(os.getcwd() + '/src/ressources/polices/arial.ttf', 30)
+font = ImageFont.truetype(os.getcwd() + '/src/powerfullbackground/ressources/polices/arial.ttf', 30)
 
 fill_free = (0, 255, 0)
 fill_used = (255, 0, 0)
