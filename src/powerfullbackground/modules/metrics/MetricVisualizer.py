@@ -2,7 +2,7 @@ import os
 
 from PIL import ImageFont
 
-from src.powerfullbackground.utils.ShapeDrawerUtils import *
+from .ShapeDrawerUtils import *
 
 font = ImageFont.truetype(os.getcwd() + '/src/powerfullbackground/ressources/polices/arial.ttf', 30)
 
@@ -40,8 +40,8 @@ def gen_network_bar(img, x, y, network_sent, network_recv):
     arrow_y = y
     arrow_fill = (0, 0, 255)
     arrow_y -= 35
-    write_text(img, 'Network', (arrow_x, arrow_y), font, (255, 255, 255))
-    arrow_x += 150
+    write_text(img, 'Network Up/Do', (arrow_x, arrow_y), font, (255, 255, 255))
+    arrow_x += 250
     arrow_y += 35
     arrow_coords = [(arrow_x, arrow_y), (arrow_x + arrow_width, arrow_y),
                     (arrow_x + arrow_width / 2, arrow_y - arrow_height)]
@@ -63,8 +63,8 @@ def gen_disk_io_bar(img, x, y, read_bytes, write_bytes):
     arrow_y = y
     arrow_fill = (0, 127, 255)
     arrow_y -= 35
-    write_text(img, 'Disk IO', (arrow_x, arrow_y), font, (255, 255, 255))
-    arrow_x += 150
+    write_text(img, 'Disk IO Re/Wr', (arrow_x, arrow_y), font, (255, 255, 255))
+    arrow_x += 250
     arrow_y += 35
     arrow_coords = [(arrow_x, arrow_y), (arrow_x + arrow_width, arrow_y),
                     (arrow_x + arrow_width / 2, arrow_y - arrow_height)]

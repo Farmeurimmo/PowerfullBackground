@@ -1,13 +1,17 @@
 import os
 
 from PIL import Image
-from screeninfo import get_monitors
-
-monitors = get_monitors()
 
 
 def gen_img():
-    width, height = monitors[0].width, monitors[0].height
+    monitors = None
+    try:
+        a = 1
+        # monitors = get_monitors()
+    except:
+        print('Error getting monitors')
+        return None
+    width, height = 1920, 1080
     new_image = Image.new("RGB", (width, height), (0, 0, 0))
 
     wallpaper = Image.open(os.getcwd() + '/src/powerfullbackground/ressources/fantasy-2750995_1920.jpeg')
