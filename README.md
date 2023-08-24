@@ -4,7 +4,7 @@
 
 ## Mais keskecé ?
 
-C'est un projet d'un petit programme python me permettant d'avoir un fond d'écran avec ma conso cpu, ram, network 
+C'est un projet d'un petit programme python me permettant d'avoir un fond d'écran avec ma conso cpu, ram, network
 (pour l'instant) sur mon fond d'écran.
 
 C'est codé en python pour mon kali linux xfce, je n'ai pas encore réfléchi à la portabilité sur d'autres distribs.
