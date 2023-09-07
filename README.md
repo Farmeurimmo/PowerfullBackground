@@ -7,6 +7,13 @@ C'est un projet d'un petit programme python me permettant d'avoir un fond d'écr
 
 C'est codé en python pour mon kali linux xfce, je n'ai pas encore réfléchi à la portabilité sur d'autres distribs.
 
+## Système supporté
+
+- Linux avec xfce (testé + démarrage automatique)
+- Linux avec gnome (non testé + pas de démarrage automatique)
+- Windows (testé, mais pas encore de démarrage automatique)
+- Mac (non testé + pas de démarrage automatique)
+
 ### Early preview
 
 ![preview_1](preview_1.png)
@@ -32,7 +39,9 @@ git clone https://github.com/Farmeurimmo/PowerfullBackground.git
 ```bash
 cd PowerfullBackground
 ```
+
 **ATTENTION, sudo est obligatoire pour l'installation**
+
 ```bash
 sudo python3 setup.py
 ```
@@ -42,10 +51,13 @@ sudo python3 setup.py
 ```bash
 cd PowerfullBackground
 ```
+
 **ATTENTION, sudo est obligatoire pour la désinstallation**
+
 ```bash
 sudo python3 uninstall.py
 ```
+
 Tous les processus/services sont arrêtés et supprimés.
 Le dossier PowerfullBackground n'est pas supprimé, vous pouvez le supprimer manuellement ou non.
 

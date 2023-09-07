@@ -1,3 +1,5 @@
+import platform
+
 from modules.metrics.FileUtils import *
 from modules.metrics.MetricVisualizer import *
 from modules.metrics.SystemMetrics import *
@@ -11,13 +13,48 @@ file_name = project_path + 'ressources/final.jpeg'
 
 print('Starting PowerfullBackground')
 
+
+def get_os():
+    return platform.system()
+
+
+def get_desktop_environment():
+    if get_os().__contains__('Windows'):
+        return 'windows'
+    if get_os().__contains__('Mac'):
+        return 'mac'
+    desktop_session = os.environ.get('DESKTOP_SESSION')
+    if desktop_session:
+        desktop_session = desktop_session.lower()
+        if 'xfce' in desktop_session:
+            return 'xfce'
+        elif 'gnome' in desktop_session:
+            return 'gnome'
+    return None
+
+
+os_env = get_desktop_environment()
+print(os_env)
+
+
+def apply_wallpaper():
+    if os_env == 'windows':
+        set_windows_wallpaper()
+    elif os_env == 'xfce':
+        set_xfce_wallpaper()
+    elif os_env == 'gnome':
+        set_gnome_wallpaper()
+    elif os_env == 'mac':
+        set_mac_wallpaper()
+
+
 while True:
     print('Generating image')
     start_time = time.time()
-    cpu_usage_percent, cpu_frequency = get_cpu()
-    ram_usage, ram_total, ram_used, ram_free = get_ram()
-    network_sent, network_recv = get_network()
-    read_bytes, write_bytes = get_disk_io()
+    ram_usage, ram_total, ram_used, ram_free = SystemMetrics.get_ram_values()
+    cpu_usage_percent, cpu_frequency = SystemMetrics.get_cpu_values()
+    network_sent, network_recv = SystemMetrics.get_network_values()
+    read_bytes, write_bytes = SystemMetrics.get_disk_io_values()
 
     img = gen_img()
     if img is None:
@@ -32,7 +69,7 @@ while True:
 
     img.save(file_name, format='JPEG')
 
-    set_xfce_wallpaper()
+    apply_wallpaper()
 
     took = time.time() - start_time
     print('took: ' + str(took) + 's')

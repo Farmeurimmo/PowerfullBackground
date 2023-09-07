@@ -2,3 +2,4 @@ Pillow
 screeninfo
 py-cpuinfo
 psutil
+asyncio
